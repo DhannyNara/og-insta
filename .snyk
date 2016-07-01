@@ -1,0 +1,56 @@
+patch:
+  'npm:ws:20160104':
+    - react-native > ws:
+        patched: '2016-06-21T21:27:54.797Z'
+  'npm:minimatch:20160620':
+    - react-native > fbjs-scripts > babel > chokidar > readdirp > minimatch:
+        patched: '2016-06-21T21:14:43.486Z'
+      react-native > fbjs-scripts > babel > chokidar > fsevents > node-pre-gyp > tar > fstream > rimraf > glob > minimatch:
+        patched: '2016-06-21T21:29:28.282Z'
+    - react-native > yeoman-generator > findup-sync > glob > minimatch:
+        patched: '2016-06-21T21:14:43.486Z'
+      react-native > fbjs-scripts > babel > chokidar > fsevents > node-pre-gyp > tar-pack > tar > fstream > rimraf > glob > minimatch:
+        patched: '2016-06-21T21:29:28.282Z'
+    - react-native > fbjs-scripts > babel > chokidar > fsevents > node-pre-gyp > tar-pack > fstream-ignore > minimatch:
+        patched: '2016-06-21T21:14:43.486Z'
+      react-native > fbjs-scripts > babel > chokidar > fsevents > node-pre-gyp > tar-pack > fstream > rimraf > glob > minimatch:
+        patched: '2016-06-21T21:29:28.282Z'
+    - react-native > fbjs-scripts > babel > babel-core > minimatch:
+        patched: '2016-06-21T21:14:43.486Z'
+      react-native > fbjs-scripts > babel > chokidar > fsevents > node-pre-gyp > tar-pack > fstream-ignore > fstream > rimraf > glob > minimatch:
+        patched: '2016-06-21T21:29:28.282Z'
+    - react-native > fbjs-scripts > babel > chokidar > fsevents > node-pre-gyp > rimraf > glob > minimatch:
+        patched: '2016-06-21T21:29:28.282Z'
+    - react-native > fbjs-scripts > babel > chokidar > fsevents > node-pre-gyp > tar-pack > rimraf > glob > minimatch:
+        patched: '2016-06-21T21:29:28.282Z'
+version: v1.5.0
+ignore:
+  'npm:minimatch:20160620':
+    - react-native > sane > minimatch:
+        reason: Remediation unavailable
+        expires: '2016-07-21T21:28:53.867Z'
+    - react-native > node-haste > sane > minimatch:
+        reason: Remediation unavailable
+        expires: '2016-07-21T21:28:53.867Z'
+    - snyk > recursive-readdir > minimatch:
+        reason: Remediation unavailable
+        expires: '2016-07-21T21:28:53.867Z'
+    - react-native > sane > minimatch:
+        reason: Remediation unavailable
+        expires: '2016-07-21T21:08:37.738Z'
+    - snyk > recursive-readdir > minimatch:
+        reason: Remediation unavailable
+        expires: '2016-07-21T21:08:37.737Z'
+    - node-haste > sane > minimatch:
+        reason: Remediation unavailable
+        expires: '2016-07-21T21:08:37.738Z'
+    - react-native > node-haste > sane > minimatch:
+        reason: Remediation unavailable
+        expires: '2016-07-21T21:08:37.738Z'
+  'npm:negotiator:20160616':
+    - react-native > connect > compression > accepts > negotiator:
+        reason: Remediation unavailable
+        expires: '2016-07-21T21:28:53.867Z'
+    - react-native > connect > serve-index > accepts > negotiator:
+        reason: Remediation unavailable
+        expires: '2016-07-21T21:28:53.867Z'
