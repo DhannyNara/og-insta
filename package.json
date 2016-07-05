@@ -35,6 +35,7 @@
     "react": "~15.1.0",
     "react-native": "^0.28.0",
     "react-native-instagram-oauth": "0.0.7",
+    "react-native-simple-store": "^1.0.1",
     "snyk": "^1.14.3"
   },
   "devDependencies": {

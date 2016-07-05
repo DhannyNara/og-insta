@@ -2,7 +2,8 @@ const React = require('react');
 const Component = React.Component;
 const shittyQs = require('shitty-qs');
 const { StyleSheet, Text, View, Linking } = require('react-native');
-// const instagramOAuth = require('react-native-instagram-oauth');
+// https://github.com/jasonmerino/react-native-simple-store
+const store = require('react-native-simple-store');
 const List = require('./List');
 
 const styles = StyleSheet.create({
@@ -43,13 +44,6 @@ function rNInstagramOAuth(clientId, redirectUrl, callback) {
   }
 
   Linking.openURL(`https://api.instagram.com/oauth/authorize/?client_id=${clientId}&redirect_uri=${redirectUrl}&response_type=token`);
-
-  // Linking.openURL(
-  //     'https://instagram.com/oauth/authorize/?client_id=' + clientId +
-  //     '&redirect_uri=' + redirectUrl +
-  //     '&response_type=token' +
-  //     '&state=${state}'
-  // );
 }
 /*eslint-enable */
 
@@ -59,6 +53,24 @@ class App extends Component {
       .then((response) => response.json()).then((responseData) => {
         console.log('response data from IG...');
         console.log(responseData);
+
+        const data = responseData.data;
+        const userInfo = {
+          id: data.id,
+          bio: data.bio,
+          counts: {
+            followedBy: data.followed_by,
+            follows: data.follows,
+            media: data.media
+          },
+          fullName: data.full_name,
+          profilePicture: data.profile_picture,
+          userName: data.username,
+          website: data.website
+        };
+
+        this.setState({ UserInfo: userInfo });
+        store.save('UserInfo', userInfo);
       });
   }
 
