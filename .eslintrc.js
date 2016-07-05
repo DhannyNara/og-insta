@@ -33,7 +33,6 @@ module.exports = {
     'prefer-template': 'warn',
     'require-yield': 'error',
     'jsx-quotes': 'warn',
-    'react/forbid-prop-types': 'warn',
     'react/jsx-boolean-value': 'warn',
     'react/jsx-closing-bracket-location': 'warn',
     'react/jsx-curly-spacing': 'warn',

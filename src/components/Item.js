@@ -1,13 +1,20 @@
-import React, { Component } from 'react';
+const React = require('react');
+const { PropTypes } = React;
+const ReactNative = require('react-native');
+const { View, Text } = ReactNative;
 
-class Item extends Component {
-  render() {
-    return (
-      <div>
-        the Item
-      </div>
-    );
-  }
-}
+const Item = function Item(props) {
+  return (
+    <View>
+      <Text>
+        {props.item.txt}
+      </Text>
+    </View>
+  );
+};
 
-export default Item;
+Item.propTypes = {
+  item: PropTypes.object
+};
+
+module.exports = Item;
