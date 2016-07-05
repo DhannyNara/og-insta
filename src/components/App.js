@@ -28,8 +28,9 @@ const styles = StyleSheet.create({
 /*eslint-disable */
 function rNInstagramOAuth(clientId, redirectUrl, callback) {
   Linking.addEventListener('url', handleUrl);
-
+  console.log('added event listenener');
   function handleUrl (event) {
+    console.log('handleUrl');
     var [, query_string] = event.url.match(/\#(.*)/);
     var query = shittyQs(query_string);
     if (query.access_token !== undefined) {
@@ -41,12 +42,14 @@ function rNInstagramOAuth(clientId, redirectUrl, callback) {
     Linking.removeEventListener('url', handleUrl);
   }
 
-  Linking.openURL(
-      'https://instagram.com/oauth/authorize/?client_id=' + clientId +
-      '&redirect_uri=' + redirectUrl +
-      '&response_type=token' +
-      '&state=${state}'
-  );
+  Linking.openURL(`https://api.instagram.com/oauth/authorize/?client_id=${clientId}&redirect_uri=${redirectUrl}&response_type=token`);
+
+  // Linking.openURL(
+  //     'https://instagram.com/oauth/authorize/?client_id=' + clientId +
+  //     '&redirect_uri=' + redirectUrl +
+  //     '&response_type=token' +
+  //     '&state=${state}'
+  // );
 }
 /*eslint-enable */
 
@@ -88,7 +91,7 @@ class App extends Component {
     // 'instagram://app'
     this.instagram = {
       client_id: '3911744c523648ce866181b26d3fe2d6',
-      redirect_url: 'ig3911744c523648ce866181b26d3fe2d6://'
+      redirect_url: 'ig3911744c523648ce866181b26d3fe2d6://authorize'
     };
 
     this.getPostsData = App.getPostsData.bind(this);
