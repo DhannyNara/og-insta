@@ -43,7 +43,7 @@ function rNInstagramOAuth(clientId, redirectUrl, callback) {
     Linking.removeEventListener('url', handleUrl);
   }
 
-  Linking.openURL(`https://api.instagram.com/oauth/authorize/?client_id=${clientId}&redirect_uri=${redirectUrl}&response_type=token`);
+  Linking.openURL(`https://api.instagram.com/oauth/authorize/?client_id=${clientId}&redirect_uri=${redirectUrl}&response_type=token&scope=basic+follower_list+public_content`);
 }
 /*eslint-enable */
 
@@ -71,6 +71,13 @@ class App extends Component {
 
         this.setState({ UserInfo: userInfo });
         store.save('UserInfo', userInfo);
+
+        // get follows list
+        fetch(`https://api.instagram.com/v1/users/self/follows?access_token=${accessToken}`)
+          .then((followsData) => followsData.json()).then((followsList) => {
+            console.log('follows data...');
+            console.log(followsList);
+          });
       });
   }
 
